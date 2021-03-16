@@ -46,7 +46,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="POST" th:action="@(/series)" th:object="${s}">
+        <form method="POST" th:action="@{/series}" th:object="${s}">
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Nome da série:</label>
             <input type="text" class="form-control" id="recipient-name">
