@@ -2,6 +2,7 @@ package com.maats.saveseries.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
@@ -10,15 +11,17 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name="TB_SERIES")
 public class Serie {
+
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
     private String nome;
 
-    @NotBlank
-    private double time;
+    
+    private Double time;
 
     @Lob
     private String anotacao;
@@ -40,11 +43,11 @@ public class Serie {
         this.nome = nome;
     }
 
-    public double getTime() {
+    public double getTempo() {
         return time;
     }
 
-    public void setTime(double time) {
+    public void setTempo(Double time) {
         this.time = time;
     }
 
@@ -56,7 +59,7 @@ public class Serie {
         this.anotacao = anotacao;
     }
 
-    public Serie(String nome, double time, String anotacao) {
+    public Serie(String nome, Double time, String anotacao) {
         this.nome = nome;
         this.time = time;
         this.anotacao = anotacao;

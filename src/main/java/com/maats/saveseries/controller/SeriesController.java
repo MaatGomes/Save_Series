@@ -2,6 +2,8 @@ package com.maats.saveseries.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.maats.saveseries.model.Serie;
 import com.maats.saveseries.repository.SerieRepository;
 import com.maats.saveseries.service.SerieService;
@@ -31,15 +33,16 @@ public class SeriesController {
     @GetMapping("/series")
     public String getSeries(Serie s, Model model){
         List<Serie> series = serieService.findAll();
-        model.addAttribute("s", s);
         model.addAttribute("series", series);
+        model.addAttribute("s", s);
+
         return "series";
     }
 
     
 
     @PostMapping("/series")
-    public String saveCard(Serie serie, BindingResult result, RedirectAttributes attributes){
+    public String saveCard(@Valid Serie serie, BindingResult result, RedirectAttributes attributes){
         
         if (result.hasErrors()) {
          
