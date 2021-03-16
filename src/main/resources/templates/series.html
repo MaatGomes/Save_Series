@@ -48,23 +48,24 @@
       <div class="modal-body">
         <form method="POST" th:action="@{/series}" th:object="${s}">
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Nome da série:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label class="col-form-label">Nome da série:</label>
+            <input type="text" class="form-control" id="nome" th:field="*{nome}">
           </div>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Tempo:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label  class="col-form-label">Tempo:</label>
+            <input type="text" class="form-control" id="tempo">
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Anotações:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label  class="col-form-label">Anotações:</label>
+            <textarea class="form-control" id="message-text" ></textarea>
           </div>
-        </form>
+       
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-warning">Criar novo Card</button>
       </div>
+    </form>
     </div>
   </div>
 </div>
