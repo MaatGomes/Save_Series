@@ -77,6 +77,9 @@
     </div>
   </div>
 
+
+  
+
   <div id="botao">
     <a id="btn-newCard" data-bs-target="#CardModal" data-bs-toggle="modal" class="btn btn-warning " role="button">Novo
       Card</a>
@@ -92,6 +95,10 @@
             <hr>
             <div><sup>Anotações:</sup></div>
             <p id="anotacoes" th:utext="${#strings.abbreviate(serie.anotacao, 28)}"></p>
+            <a th:attr="data-bs-target='#CardModalPreview'+${serie.id}" data-bs-toggle="modal" id="btnCard" class="btn btn-warning" role="button">Botão</a>
+         
+         
+           
           </div>
           <div class="card-stats">
             <div class="stat">
@@ -109,6 +116,46 @@
             </div>
           </div>
         </div>
+        <div class="modal fade"  th:id="CardModalPreview+${serie.id}" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Novo Card</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form method="POST" th:action="@{/series}" th:object="${s}">
+                  <div class="mb-3">
+                    <label class="col-form-label">Nome da série:</label>
+                    <input type="text" class="form-control" id="nome" th:value="${serie.id}">
+                  </div>
+                  <div class="mb-3">
+                    <label class="col-form-label">Temporada</label>
+                    <input type="number" class="form-control" id="temp" th:value="${serie.temp}">
+                  </div>
+                  <div class="mb-3">
+                    <label class="col-form-label">Epsódio</label>
+                    <input type="number" class="form-control" id="ep" th:value="${serie.ep}">
+                  </div>
+                  <div class="mb-3">
+                    <label class="col-form-label">Tempo:</label>
+                    <input type="time" class="form-control" step="1" id="tempo" th:value="${serie.time}">
+                  </div>
+                  <div class="mb-3">
+                    <label class="col-form-label">Anotações:</label>
+                    <textarea class="form-control"  id="anotacao"  th:text="${serie.anotacao}"></textarea>
+                  </div>
+      
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+          
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
