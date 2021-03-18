@@ -28,7 +28,7 @@
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#S">Contact</a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
         </div>
@@ -83,15 +83,21 @@
   </div>
 
   <div class="container">
-    <div class="row" >
+    <div class="row">
       <div class="col-sm-3" th:each="serie : ${series}">
-        <div class="card" >
-        </a>
+        <div class="card"> 
           <div class="card-text">
-            <h2 th:text="${serie.nome}" ></h2>
+            <h2 id="tituloCard" th:text="${serie.nome}" ></h2>
+            
             <hr>
+            
             <div><sup>Anotações:</sup></div>
-            <p id="anotacoes" th:utext="${#strings.abbreviate(serie.anotacao, 28)}"></p>
+            <p id="anotacoes" th:utext="${#strings.abbreviate(serie.anotacao, 20)}"></p>
+              
+            <a th:href="@{'/cardDetails/{id}'}" id="btnCard" class="btn btn-warning" role="button"></a>
+            <a href="#" id="btnCardd" class="btn btn-warning" role="button"></a>
+            <a href="#" id="btnCarddd" class="btn  btn-warning" role="button"></a>
+          
           </div>
           <div class="card-stats">
             <div class="stat">
@@ -106,12 +112,14 @@
             <div class="stat">
               <div><sup>Tempo</sup></div>
               <div th:text="${serie.time}"></div>
+              
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 
 
 
