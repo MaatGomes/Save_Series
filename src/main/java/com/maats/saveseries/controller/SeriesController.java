@@ -55,12 +55,21 @@ public class SeriesController {
 
     }
 
+<<<<<<< HEAD
     @GetMapping("/cardDetails/{id}")
     public String getCardDetails(@PathVariable("id") Long id) {
 
         serieService.findById(id);
 
         return "series";
+=======
+    @GetMapping("/cardDetails")
+    public ModelAndView getCardDetails(){
+        ModelAndView mv = new ModelAndView("cardDetails");
+  
+       
+        return mv;
+>>>>>>> 510c5ba9832dea1e601dc446889b636baa66d9da
     }
   
 
