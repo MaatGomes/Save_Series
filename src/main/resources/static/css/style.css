@@ -129,10 +129,7 @@ body{
 }
 
 
-  .card:active, .card:focus{
-
-    transform: scale(2);
-  }
+  
  
   #btnCard{
     display: inline;
