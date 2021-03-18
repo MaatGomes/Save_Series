@@ -14,10 +14,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-
-
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 
@@ -55,5 +55,13 @@ public class SeriesController {
         return "redirect:/series";
 
     }
-    
+
+    @GetMapping("/cardDetails/{id}")
+    public ModelAndView getCardDetails(@PathVariable("id") Long id){
+        ModelAndView mv = new ModelAndView("cardDetails");
+        Serie serie = serieService.findById(id);
+        mv.addObject("serie", serie);
+        return mv;
+    }
+
 }
