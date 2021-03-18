@@ -113,7 +113,6 @@ body{
     transition: 0.5s ease;
     cursor: pointer;
     margin:20px;
-<<<<<<< HEAD
   }
  #btnCard{
    display: inline;
@@ -128,17 +127,7 @@ body{
 #anotacoes{
   overflow: hidden; width:170px; border:1px; white-space:nowrap;
 }
-#tituloCard{
-  
-    
-    
-}
-=======
-   
 
-  
-  }
->>>>>>> 510c5ba9832dea1e601dc446889b636baa66d9da
 
   .card:active, .card:focus{
 
