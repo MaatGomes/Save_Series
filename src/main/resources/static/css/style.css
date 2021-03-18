@@ -116,9 +116,29 @@ body{
     cursor: pointer;
     margin:20px;
    
+
+  
+  }
+
+  .card:active, .card:focus{
+
+    transform: scale(2);
   }
  
-
+  #btnCard{
+    display: inline;
+ 
+   
+  }
+  #btnCardd{
+   display: inline;
+  margin: 10px;;
+ }
+ #btnCarddd{
+   display: inline;
+  
+   
+ }
 
 
 
