@@ -65,7 +65,7 @@ public class SeriesController {
 
     }
 
-    @GetMapping("/series")
+    @GetMapping("/filmes")
     public String getFilmes(Filme f, Model model){
         List<Filme> filmes = filmeService.findAll();
         model.addAttribute("filmes", filmes);
@@ -73,7 +73,7 @@ public class SeriesController {
         return "filmes";
     }
 
-    @PostMapping("/series")
+    @PostMapping("/filmes")
     public String saveCardFilme(@Valid Filme filme, BindingResult result, RedirectAttributes attributes){
         
         if (result.hasErrors()) {
@@ -88,10 +88,7 @@ public class SeriesController {
 
     }
 
-
-    
-
-    @GetMapping("/cardDetails/{id}")
+    @GetMapping("/cardDetailsSeries/{id}")
     public String getCardDetailsSerie(@PathVariable("id") Long id) {
 
         serieService.findById(id);
@@ -99,12 +96,12 @@ public class SeriesController {
         return "series";
     }
 
-    @GetMapping("/cardDetails/{id}")
+    @GetMapping("/cardDetailsFilmes/{id}")
     public String getCardDetailsFilme(@PathVariable("id") Long id) {
 
         filmeService.findById(id);
 
-        return "filmes";
+        return "series";
     }
   
 

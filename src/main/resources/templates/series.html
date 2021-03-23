@@ -95,6 +95,41 @@
   </div>
 
 
+    //filme 
+    <div class="modal fade" id="CardModalSerie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Novo Card</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" th:action="@{/filmes}" th:object="${f}">
+              <div class="mb-3">
+                <label class="col-form-label">Nome do Filme:</label>
+                <input type="text" class="form-control" id="nome" th:field="*{nomeFilme}">
+              </div>
+              <div class="mb-3">
+                <label class="col-form-label">Tempo:</label>
+                <input type="time" class="form-control" step="1" id="tempo" th:field="*{timeFilme}">
+              </div>
+              <div class="mb-3">
+                <label class="col-form-label">Anotações:</label>
+                <textarea class="form-control" id="message-text" th:field="*{anotacaoFilme}"></textarea>
+              </div>
+  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-warning">Criar novo Card</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+
 
 
 
@@ -146,12 +181,12 @@
             <div class="col-sm-3" th:each="filme : ${filmes}">
               <div class="card">
                 <div class="card-text">
-                  <h2 id="tituloCard" th:text="${filme.nome}"></h2>
+                  <h2 id="tituloCard" th:text="${filme.nomeFilme}"></h2>
       
                   <hr>
       
                   <div><sup>Anotações:</sup></div>
-                  <p id="anotacoes" th:utext="${#strings.abbreviate(filme.anotacao, 20)}"></p>
+                  <p id="anotacoes" th:utext="${#strings.abbreviate(filme.anotacaoFilme, 20)}"></p>
       
                   <a th:attr="data-bs-target='#CardModalPreview'+${filme.id}" data-bs-toggle="modal" id="btnCard"
                     class="btn btn-warning" role="button">Exibir info</a>
@@ -161,7 +196,7 @@
                 <div class="card-stats">
                   <div class="stat">
                     <div><sup>Tempo</sup></div>
-                    <div th:text="${filme.time}"></div>
+                    <div th:text="${filme.timeFilme}"></div>
       
                   </div>
                 </div>

@@ -19,12 +19,17 @@ import javax.validation.constraints.NotBlank;
         private Long id;
 
         @NotBlank
-        private String nome;
+        private String nomeFilme;
 
-        private Time time;
+        private Time timeFilme;
 
         @Lob
-        private String anotacao;
+        private String anotacaoFilme;
+
+
+        public Filme() {
+
+        }
 
         public Long getId() {
             return id;
@@ -34,39 +39,35 @@ import javax.validation.constraints.NotBlank;
             this.id = id;
         }
 
-        public String getNome() {
-            return nome;
+        public String getNomeFilme() {
+            return nomeFilme;
         }
 
-        public void setNome(String nome) {
-            this.nome = nome;
+        public void setNomeFilme(String nomeFilme) {
+            this.nomeFilme = nomeFilme;
         }
 
-        public String getAnotacao() {
-            return anotacao;
+        public Time getTimeFilme() {
+            return timeFilme;
         }
 
-        public void setAnotacao(String anotacao) {
-            this.anotacao = anotacao;
+        public void setTimeFilme(Time timeFilme) {
+            this.timeFilme = timeFilme;
         }
 
-        public Time getTime() {
-            return time;
+        public String getAnotacaoFilme() {
+            return anotacaoFilme;
         }
 
-        public void setTime(Time time) {
-            this.time = time;
+        public void setAnotacaoFilme(String anotacaoFilme) {
+            this.anotacaoFilme = anotacaoFilme;
         }
 
-        public Filme(String nome, Time time, String anotacao) {
-            this.nome = nome;
-            this.time = time;
-            this.anotacao = anotacao;
-
-        }
-
-        public Filme() {
-
+        public Filme(Long id, @NotBlank String nomeFilme, Time timeFilme, String anotacaoFilme) {
+            this.id = id;
+            this.nomeFilme = nomeFilme;
+            this.timeFilme = timeFilme;
+            this.anotacaoFilme = anotacaoFilme;
         }
 
     }
