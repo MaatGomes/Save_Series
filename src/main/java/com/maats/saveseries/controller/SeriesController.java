@@ -21,72 +21,92 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
-
 @Controller
 public class SeriesController {
-    
+
     @Autowired
     SerieService serieService;
-  
 
     @Autowired
     SerieRepository serieRepository;
-  
+
     @Autowired
     FilmeService filmeService;
 
     @Autowired
     FilmeRepository filmeRepository;
 
-
-    @GetMapping("/series")
-    public String getSeries(Serie s, Model model){
-        List<Serie> series = serieService.findAll();
-        model.addAttribute("series", series);
+    @GetMapping("/cards")
+    public String getCards(Serie s, Filme f, Model model) {
+        List<Serie> serieLista = serieService.findAll();
+        List<Filme> filmeLista = filmeService.findAll();
+        model.addAttribute("serieLista", serieLista);
+        model.addAttribute("filmeLista", filmeLista);
         model.addAttribute("s", s);
+        model.addAttribute("f", f);
 
-        return "series";
+        return "cards";
     }
-    
 
     @PostMapping("/series")
-    public String saveCardSerie(@Valid Serie serie, BindingResult result, RedirectAttributes attributes){
-        
+    public String saveSeries(@Valid Serie serie, BindingResult result, RedirectAttributes attributes) {
+
         if (result.hasErrors()) {
-         
+
             attributes.addFlashAttribute("serie", serie);
-            return "redirect:/series";
+         
+            return "redirect:/cards";
 
         }
-        serieRepository.save(serie);
 
-        return "redirect:/series";
+    
+           
 
-    }
+            serieRepository.save(serie);
+            return "redirect:/cards";
+        }
 
-    @GetMapping("/filmes")
-    public String getFilmes(Filme f, Model model){
-        List<Filme> filmes = filmeService.findAll();
-        model.addAttribute("filmes", filmes);
-        model.addAttribute("f", f);
-        return "filmes";
-    }
+
+
 
     @PostMapping("/filmes")
-    public String saveCardFilme(@Valid Filme filme, BindingResult result, RedirectAttributes attributes){
-        
+    public String saveFilmes(@Valid Filme filme, BindingResult result, RedirectAttributes attributes) {
+
         if (result.hasErrors()) {
          
             attributes.addFlashAttribute("filme", filme);
-            return "redirect:/series";
+            return "redirect:/cards";
 
         }
-        filmeRepository.save(filme);
-
-        return "redirect:/series";
+       
+            filmeRepository.save(filme);
+            return "redirect:/cards";
+            
 
     }
+
+
+  
+
+    /*
+     * /* @GetMapping("/filmes") public String getFilmes(Filme f, Model model){
+     * List<Filme> filmes = filmeService.findAll(); model.addAttribute("filmes",
+     * filmes); model.addAttribute("f", f); return "filmes"; }
+     */
+    /*
+     * @PostMapping("/filmes") public String saveCardFilme(@Valid Filme filme,
+     * BindingResult result, RedirectAttributes attributes){
+     * 
+     * if (result.hasErrors()) {
+     * 
+     * attributes.addFlashAttribute("filme", filme); return "redirect:/series";
+     * 
+     * } filmeRepository.save(filme);
+     * 
+     * return "redirect:/filmes";
+     * 
+     * }
+     */
 
     @GetMapping("/cardDetailsSeries/{id}")
     public String getCardDetailsSerie(@PathVariable("id") Long id) {
@@ -103,7 +123,5 @@ public class SeriesController {
 
         return "series";
     }
-  
-
 
 }
