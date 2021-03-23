@@ -67,39 +67,6 @@ public class SeriesController {
         }
 
 
-
-<<<<<<< HEAD
-    @GetMapping("/series")
-    public String getFilmes(Filme f, Model model){
-        List<Filme> filmes = filmeService.findAll();
-        model.addAttribute("filmes", filmes);
-        model.addAttribute("f", f);
-        return "filmes";
-    }
-
-    @PostMapping("/series")
-    public String saveCardFilme(@Valid Filme filme, BindingResult result, RedirectAttributes attributes){
-        
-=======
-
-    @PostMapping("/filmes")
-    public String saveFilmes(@Valid Filme filme, BindingResult result, RedirectAttributes attributes) {
-
->>>>>>> 9eb84b5d2493ded08a404b269670f0fbc9281de5
-        if (result.hasErrors()) {
-         
-            attributes.addFlashAttribute("filme", filme);
-            return "redirect:/cards";
-
-        }
-       
-            filmeRepository.save(filme);
-            return "redirect:/cards";
-            
-
-    }
-
-
   
 
     /*

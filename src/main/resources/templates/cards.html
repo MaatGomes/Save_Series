@@ -95,33 +95,8 @@
   </div>
 
 
-<<<<<<< HEAD:src/main/resources/templates/series.html
-=======
-    //filme 
-    <div class="modal fade" id="CardModalFilme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Novo Card</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form method="POST" th:action="@{/filmes}" th:object="${f}">
-              <div class="mb-3">
-                <label class="col-form-label">Nome do Filme:</label>
-                <input type="text" class="form-control" id="nome" th:field="*{nomeFilme}">
-              </div>
-              <div class="mb-3">
-                <label class="col-form-label">Tempo:</label>
-                <input type="time" class="form-control" step="1" id="tempo" th:field="*{timeFilme}">
-              </div>
-              <div class="mb-3">
-                <label class="col-form-label">Anotações:</label>
-                <textarea class="form-control" id="message-text" th:field="*{anotacaoFilme}"></textarea>
-              </div>
->>>>>>> 9eb84b5d2493ded08a404b269670f0fbc9281de5:src/main/resources/templates/cards.html
   
- <!--<div class="modal fade" id="CardModalSerie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="CardModalSerie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -151,7 +126,7 @@
         </form>
       </div>
     </div>
-  </div>-->
+  </div>
 
 
 
@@ -163,7 +138,7 @@
       Card</a>
   </div>
 
-  //serie
+  
   <div class="container">
     <div class="row">
       <div class="col-sm-3" th:each="serie : ${serieLista}">
