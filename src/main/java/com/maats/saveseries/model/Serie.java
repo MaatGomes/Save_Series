@@ -11,9 +11,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name="TB_SERIES")
+@Table(name = "TB_SERIES")
 public class Serie {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +21,6 @@ public class Serie {
     @NotBlank
     private String nome;
 
-    
     private Time time;
 
     @Lob
@@ -32,7 +30,6 @@ public class Serie {
 
     private Integer ep;
 
-    
     public Long getId() {
         return id;
     }
@@ -49,36 +46,38 @@ public class Serie {
         this.nome = nome;
     }
 
-
     public String getAnotacao() {
         return anotacao;
     }
+
     public Integer getTemp() {
         return temp;
     }
-    
+
     public void setTemp(Integer temp) {
         this.temp = temp;
     }
-    
+
     public Integer getEp() {
         return ep;
     }
-    
+
     public void setEp(Integer ep) {
         this.ep = ep;
-    } 
+    }
 
     public void setAnotacao(String anotacao) {
         this.anotacao = anotacao;
     }
- public Time getTime() {
+
+    public Time getTime() {
         return time;
     }
 
     public void setTime(Time time) {
         this.time = time;
     }
+
     public Serie(String nome, Time time, String anotacao, Integer temp, Integer ep) {
         this.nome = nome;
         this.time = time;
@@ -86,11 +85,10 @@ public class Serie {
         this.temp = temp;
         this.ep = ep;
     }
-    public Serie(){
 
-}
+    public Serie() {
 
-   
+    }
+
     
-
 }

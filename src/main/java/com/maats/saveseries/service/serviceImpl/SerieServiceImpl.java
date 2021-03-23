@@ -3,7 +3,9 @@ package com.maats.saveseries.service.serviceImpl;
 import java.util.List;
 
 import com.maats.saveseries.model.Serie;
+
 import com.maats.saveseries.repository.SerieRepository;
+
 import com.maats.saveseries.service.SerieService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SerieServiceImpl implements SerieService {
 
-    @Autowired 
+    @Autowired
     SerieRepository serieRepository;
 
     @Override
@@ -29,5 +31,5 @@ public class SerieServiceImpl implements SerieService {
     public Serie save(Serie serie) {
         return serieRepository.save(serie);
     }
-    
+
 }

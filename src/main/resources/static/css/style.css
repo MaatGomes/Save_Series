@@ -146,8 +146,33 @@ body{
    
  }
 
+ #headerDetails{
+  background-color:rgb(247, 190, 4);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  
+  
+}
+#modalDetails{
+ border-top-left-radius: 18px;
+ border-top-right-radius: 18px;
+ border-bottom-left-radius: 18px;
+ border-bottom-right-radius: 18px;
+ text-align: center;
+ font-family: roboto;
+ font-size: 20px;
+}
 
-
+#exampleModalLabel{
+  font-family: roboto;
+  font-size: 45px;
+}
+.col-form-label{
+  font-style: oblique;
+  font-weight: bold
+}
+#CardModalSerie { overflow-y: auto }
+#CardModalFilme { overflow-y: auto }
 
   
 

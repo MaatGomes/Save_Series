@@ -4,8 +4,11 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.maats.saveseries.model.Filme;
 import com.maats.saveseries.model.Serie;
+import com.maats.saveseries.repository.FilmeRepository;
 import com.maats.saveseries.repository.SerieRepository;
+import com.maats.saveseries.service.FilmeService;
 import com.maats.saveseries.service.SerieService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +28,17 @@ public class SeriesController {
     
     @Autowired
     SerieService serieService;
+  
 
     @Autowired
     SerieRepository serieRepository;
+  
+    @Autowired
+    FilmeService filmeService;
+
+    @Autowired
+    FilmeRepository filmeRepository;
+
 
     @GetMapping("/series")
     public String getSeries(Serie s, Model model){
@@ -37,11 +48,10 @@ public class SeriesController {
 
         return "series";
     }
-
     
 
     @PostMapping("/series")
-    public String saveCard(@Valid Serie serie, BindingResult result, RedirectAttributes attributes){
+    public String saveCardSerie(@Valid Serie serie, BindingResult result, RedirectAttributes attributes){
         
         if (result.hasErrors()) {
          
@@ -55,12 +65,46 @@ public class SeriesController {
 
     }
 
+    @GetMapping("/series")
+    public String getFilmes(Filme f, Model model){
+        List<Filme> filmes = filmeService.findAll();
+        model.addAttribute("filmes", filmes);
+        model.addAttribute("f", f);
+        return "filmes";
+    }
+
+    @PostMapping("/series")
+    public String saveCardFilme(@Valid Filme filme, BindingResult result, RedirectAttributes attributes){
+        
+        if (result.hasErrors()) {
+         
+            attributes.addFlashAttribute("filme", filme);
+            return "redirect:/series";
+
+        }
+        filmeRepository.save(filme);
+
+        return "redirect:/series";
+
+    }
+
+
+    
+
     @GetMapping("/cardDetails/{id}")
-    public String getCardDetails(@PathVariable("id") Long id) {
+    public String getCardDetailsSerie(@PathVariable("id") Long id) {
 
         serieService.findById(id);
 
         return "series";
+    }
+
+    @GetMapping("/cardDetails/{id}")
+    public String getCardDetailsFilme(@PathVariable("id") Long id) {
+
+        filmeService.findById(id);
+
+        return "filmes";
     }
   
 
