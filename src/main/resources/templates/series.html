@@ -95,39 +95,39 @@
   </div>
 
 
-    //filme 
-    <div class="modal fade" id="CardModalSerie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Novo Card</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form method="POST" th:action="@{/filmes}" th:object="${f}">
-              <div class="mb-3">
-                <label class="col-form-label">Nome do Filme:</label>
-                <input type="text" class="form-control" id="nome" th:field="*{nomeFilme}">
-              </div>
-              <div class="mb-3">
-                <label class="col-form-label">Tempo:</label>
-                <input type="time" class="form-control" step="1" id="tempo" th:field="*{timeFilme}">
-              </div>
-              <div class="mb-3">
-                <label class="col-form-label">Anotações:</label>
-                <textarea class="form-control" id="message-text" th:field="*{anotacaoFilme}"></textarea>
-              </div>
   
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-warning">Criar novo Card</button>
-          </div>
-          </form>
+ <!--<div class="modal fade" id="CardModalSerie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Novo Card</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <form method="POST" th:action="@{/series}" th:object="${f}">
+            <div class="mb-3">
+              <label class="col-form-label">Nome do Filme:</label>
+              <input type="text" class="form-control" id="nome" th:field="*{nomeFilme}">
+            </div>
+            <div class="mb-3">
+              <label class="col-form-label">Tempo:</label>
+              <input type="time" class="form-control" step="1" id="tempo" th:field="*{timeFilme}">
+            </div>
+            <div class="mb-3">
+              <label class="col-form-label">Anotações:</label>
+              <textarea class="form-control" id="message-text" th:field="*{anotacaoFilme}"></textarea>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-warning">Criar novo Card</button>
+        </div>
+        </form>
       </div>
     </div>
-  
+  </div>-->
+
 
 
 
@@ -182,86 +182,86 @@
               <div class="card">
                 <div class="card-text">
                   <h2 id="tituloCard" th:text="${filme.nomeFilme}"></h2>
-      
+
                   <hr>
-      
+
                   <div><sup>Anotações:</sup></div>
                   <p id="anotacoes" th:utext="${#strings.abbreviate(filme.anotacaoFilme, 20)}"></p>
-      
+
                   <a th:attr="data-bs-target='#CardModalPreview'+${filme.id}" data-bs-toggle="modal" id="btnCard"
                     class="btn btn-warning" role="button">Exibir info</a>
-      
-      
+
+
                 </div>
                 <div class="card-stats">
                   <div class="stat">
                     <div><sup>Tempo</sup></div>
                     <div th:text="${filme.timeFilme}"></div>
-      
+
                   </div>
                 </div>
               </div>
 
-      
-    
-        <div class="modal fade" th:id="CardModalPreview+${serie.id}" tabindex="1" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content" id="modalDetails">
-              <div class="modal-header" id="headerDetails">
-                <h5 class="modal-title w-100" id="exampleModalLabel" th:text="${serie.nome}"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+              <div class="modal fade" th:id="CardModalPreview+${serie.id}" tabindex="1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content" id="modalDetails">
+                    <div class="modal-header" id="headerDetails">
+                      <h5 class="modal-title w-100" id="exampleModalLabel" th:text="${serie.nome}"></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form method="POST" th:action="@{/series}" th:object="${s}">
+
+                        <div class="mb-3">
+                          <label class="col-form-label">Episódio:</label>
+                          <p type="number" class="text" id="ep" th:text="${serie.ep}"></p>
+                          <hr>
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="col-form-label">Temporada:</label>
+                          <p class="text" id="temp" th:text="${serie.temp}+'°'"></p>
+                          <hr>
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="col-form-label">Tempo:</label>
+                          <p type="time" class="text" step="1" id="tempo" th:text="${serie.time}"></p>
+                          <hr>
+                        </div>
+                        <div class="mb-3">
+                          <label class="col-form-label">Anotações:</label>
+                          <p class="text" id="anotacao" th:text="${serie.anotacao}"></p>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                    </form>
+                  </div>
+                </div>
               </div>
-              <div class="modal-body">
-                <form method="POST" th:action="@{/series}" th:object="${s}">
 
-                  <div class="mb-3">
-                    <label class="col-form-label">Episódio:</label>
-                    <p type="number" class="text" id="ep" th:text="${serie.ep}"></p>
-                    <hr>
-                  </div>
 
-                  <div class="mb-3">
-                    <label class="col-form-label">Temporada:</label>
-                    <p class="text" id="temp" th:text="${serie.temp}+'°'"></p>
-                    <hr>
-                  </div>
 
-                  <div class="mb-3">
-                    <label class="col-form-label">Tempo:</label>
-                    <p type="time" class="text" step="1" id="tempo" th:text="${serie.time}"></p>
-                    <hr>
-                  </div>
-                  <div class="mb-3">
-                    <label class="col-form-label">Anotações:</label>
-                    <p class="text" id="anotacao" th:text="${serie.anotacao}"></p>
-                  </div>
 
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
 
-              </div>
-              </form>
             </div>
           </div>
         </div>
 
-        
-
-
-
-      </div>
-    </div>
-  </div>
 
 
 
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+          crossorigin="anonymous"></script>
 </body>
 
 </html>
