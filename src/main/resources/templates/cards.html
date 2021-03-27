@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" th:href="@{/css/style.css}">
+  <script src="https://kit.fontawesome.com/2fbff6a782.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,6 +21,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Cards</a>
@@ -27,14 +29,20 @@
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
+
+
+
+  <div id="botao">
+    <a id="btn-newCard" data-bs-target="#CardEscolha" data-bs-toggle="modal" class="btn" role="button">Novo
+      Card</a>
+  </div>
+
+
 
   <div class="modal fade" id="CardEscolha">
     <div class="modal-dialog">
@@ -42,12 +50,13 @@
         <div class="modal-body">
           <h5>Escolha qual você quer salvar:</h5>
           <hr>
+
           <a href="#CardModalSerie" data-bs-toggle="modal" data-bs-dismiss="modal" role="button"
-            class="btn btn-warning popover-test" title="Popover title"
-            data-bs-content="Popover body content is set in this attribute.">Série</a>
+            class="btn popover-test" title="Popover title"
+            data-bs-content="Popover body content is set in this attribute." id="btnEscolha">Série</a>
           <a href="#CardModalFilme" data-bs-toggle="modal" data-bs-dismiss="modal" role="button"
-            class="btn btn-warning popover-test" title="Popover title"
-            data-bs-content="Popover body content is set in this attribute.">Filme</a>
+            class="btn popover-test " title="Popover title"
+            data-bs-content="Popover body content is set in this attribute." id="btnEscolha">Filme</a>
         </div>
       </div>
     </div>
@@ -58,7 +67,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Novo Card</h5>
+          <h5 class="modal-title" id="exampleModalLabelSerie">Novo Card</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -86,8 +95,8 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-warning">Criar novo Card</button>
+          <button id="btnNC" type="button" class="btn" data-bs-dismiss="modal">Close</button>
+          <button id="btnNC" type="submit" class="btn">Criar novo Card</button>
         </div>
         </form>
       </div>
@@ -95,16 +104,16 @@
   </div>
 
 
-  
- <div class="modal fade" id="CardModalSerie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal fade" id="CardModalFilme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Novo Card</h5>
+          <h5 class="modal-title" id="exampleModalLabelFilme">Novo Card</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="POST" th:action="@{/series}" th:object="${f}">
+          <form method="POST" th:action="@{/filmes}" th:object="${f}">
             <div class="mb-3">
               <label class="col-form-label">Nome do Filme:</label>
               <input type="text" class="form-control" id="nome" th:field="*{nomeFilme}">
@@ -120,8 +129,8 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-warning">Criar novo Card</button>
+          <button id="btnNC" type="button" class="btn" data-bs-dismiss="modal">Close</button>
+          <button id="btnNC" type="submit" class="btn">Criar novo Card</button>
         </div>
         </form>
       </div>
@@ -133,136 +142,214 @@
 
 
 
-  <div id="botao">
-    <a id="btn-newCard" data-bs-target="#CardEscolha" data-bs-toggle="modal" class="btn btn-warning " role="button">Novo
-      Card</a>
-  </div>
 
-  
+
+
   <div class="container">
     <div class="row">
       <div class="col-sm-3" th:each="serie : ${serieLista}">
         <div class="card">
-          <div class="card-text">
-            <h2 id="tituloCard" th:text="${serie.nome}"></h2>
-
-            <hr>
-
-            <div><sup>Anotações:</sup></div>
-            <p id="anotacoes" th:utext="${#strings.abbreviate(serie.anotacao, 20)}"></p>
-
-            <a th:attr="data-bs-target='#CardModalPreview'+${serie.id}" data-bs-toggle="modal" id="btnCard"
-              class="btn btn-warning" role="button">Exibir info</a>
-
-
-          </div>
-          <div class="card-stats">
-            <div class="stat">
-              <div><sup>Temporada</sup></div>
-              <div th:text="${serie.temp}"></div>
-            </div>
-            <div class="stat border">
-              <div><sup>Epsódio</sup></div>
-              <div th:text="${serie.ep}"></div>
+          <div>
+            <div id="opcoes">
+              <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal" id="btnCard"
+                class="btn" role="button"><i class="far fa-eye"></i></a>
+              <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal" id="btnCardEditar"
+                class="btn" role="button"><i class="far fa-edit"></i></a>
+              <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal"
+                id="btnCardExcluir" class="btn" role="button"><i class="far fa-trash-alt"></i></a>
 
             </div>
-            <div class="stat">
-              <div><sup>Tempo</sup></div>
-              <div th:text="${serie.time}"></div>
+            <div class="card-text">
+              <h2 id="tituloCard" th:text="${#strings.abbreviate(serie.nome, 10)}"></h2>
+              <hr>
+              <div><sup>Anotações:</sup></div>
+              <p id="anotacoes" th:utext="${#strings.abbreviate(serie.anotacao, 20)}"></p>
 
+
+
+            </div>
+            <div class="card-stats">
+              <div class="stat">
+                <div><sup>Temporada</sup></div>
+                <div th:text="${serie.temp}"></div>
+              </div>
+              <div class="stat border">
+                <div><sup>Episódio</sup></div>
+                <div th:text="${serie.ep}"></div>
+
+              </div>
+              <div class="stat">
+                <div><sup>Tempo</sup></div>
+                <div th:text="${serie.time}"></div>
+
+              </div>
             </div>
           </div>
         </div>
 
+        <div class="modal fade text-break" th:id="CardModalPreviewSerie+${serie.id}" tabindex="1"
+          aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content" id="modalDetails">
+              <div class="modal-header" id="headerDetailsSerie">
+                <h5 class="modal-title w-100" id="exampleModalLabel" th:text="${serie.nome}"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
 
-        
-        <div class="container">
-          <div class="row">
 
-            <div class="col-sm-3" th:each="filme : ${filmeLista}">
-              <div class="card">
-                <div class="card-text">
-                  <h2 id="tituloCard" th:text="${filme.nomeFilme}"></h2>
-
+                <div class="mb-3">
+                  <label class="col-form-label">Episódio:</label>
+                  <p type="number" class="text" id="ep" th:text="${serie.ep}"></p>
                   <hr>
-
-                  <div><sup>Anotações:</sup></div>
-                  <p id="anotacoes" th:utext="${#strings.abbreviate(filme.anotacaoFilme, 20)}"></p>
-
-                  <a th:attr="data-bs-target='#CardModalPreview'+${filme.id}" data-bs-toggle="modal" id="btnCard"
-                    class="btn btn-warning" role="button">Exibir info</a>
-
-
                 </div>
-                <div class="card-stats">
-                  <div class="stat">
-                    <div><sup>Tempo</sup></div>
-                    <div th:text="${filme.timeFilme}"></div>
 
-                  </div>
+                <div class="mb-3">
+                  <label class="col-form-label">Temporada:</label>
+                  <p class="text" id="temp" th:text="${serie.temp}+'°'"></p>
+                  <hr>
                 </div>
+
+                <div class="mb-3">
+                  <label class="col-form-label">Tempo:</label>
+                  <p type="time" class="text" step="1" id="tempo" th:text="${serie.time}"></p>
+                  <hr>
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">Anotações:</label>
+                  <p class="text" id="anotacao" th:text="${serie.anotacao}"></p>
+                </div>
+
               </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Excluir</button>
+                <button  type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#EditarSerie">Editar</button>
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
 
-
-
-              <div class="modal fade" th:id="CardModalPreview+${serie.id}" tabindex="1"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content" id="modalDetails">
-                    <div class="modal-header" id="headerDetails">
-                      <h5 class="modal-title w-100" id="exampleModalLabel" th:text="${serie.nome}"></h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form method="POST" th:action="@{/series}" th:object="${s}">
-
-                        <div class="mb-3">
-                          <label class="col-form-label">Episódio:</label>
-                          <p type="number" class="text" id="ep" th:text="${serie.ep}"></p>
-                          <hr>
-                        </div>
-
-                        <div class="mb-3">
-                          <label class="col-form-label">Temporada:</label>
-                          <p class="text" id="temp" th:text="${serie.temp}+'°'"></p>
-                          <hr>
-                        </div>
-
-                        <div class="mb-3">
-                          <label class="col-form-label">Tempo:</label>
-                          <p type="time" class="text" step="1" id="tempo" th:text="${serie.time}"></p>
-                          <hr>
-                        </div>
-                        <div class="mb-3">
-                          <label class="col-form-label">Anotações:</label>
-                          <p class="text" id="anotacao" th:text="${serie.anotacao}"></p>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
-
-                    </div>
-                    </form>
-                  </div>
-                </div>
               </div>
-
-
-
-
 
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="modal fade" id="EditarSerie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabelSerie">Editando card</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" th:action="@{/editSerie}" th:object="${s}">
+                <div class="mb-3">
+                  <label class="col-form-label">Nome da série:</label>
+                  <input type="text" class="form-control" id="nome" th:field="*{nome}" th:value="*{nome}">
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">Temporada</label>
+                  <input type="number" class="form-control" id="temp" th:field="*{temp}" th:value="*{temp}">
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">Epsódio</label>
+                  <input type="number" class="form-control" id="ep" th:field="*{ep}" th:value="*{ep}">
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">Tempo:</label>
+                  <input type="time" class="form-control" step="1" id="tempo" th:field="*{time}" th:value="*{time}">
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">Anotações:</label>
+                  <textarea class="form-control" id="message-text" th:field="*{anotacao}" th:value="*{anotacao}"></textarea>
+                </div>
+                <input type="hidden" id="id" th:field="*{id}">
+              
+            </div>
+            
+            <div class="modal-footer">
+              <button id="btnNC" type="button" class="btn" data-bs-dismiss="modal">Close</button>
+              <button id="btnNC" type="submit" class="btn">salvar alterações</button>
+              
+            </div>
+            
+          </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3" th:each="filme : ${filmeLista}">
+        <div class="card">
+          <div>
+            <div id="opcoes2">
+              <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
+              id="btnCardFilme" class="btn" role="button"><i class="far fa-eye"></i></a>
+              <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
+              id="btnCardFilme" class="btn" role="button"><i class="far fa-edit"></i></a>
+              <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
+              id="btnCardFilme" class="btn" role="button"><i class="far fa-trash-alt"></i></a>
+
+
+            </div>
+            <div class="card-text">
+
+              <h2 id="tituloCard" th:text="${#strings.abbreviate(filme.nomeFilme, 10)}"></h2>
+
+              <hr>
+
+              <div><sup>Anotações:</sup></div>
+              <p id="anotacoes" th:utext="${#strings.abbreviate(filme.anotacaoFilme, 20)}"></p>
+
+  
+
+
+            </div>
+            <div class="card-statsFilme">
+              <div class="stat">
+                <div><sup>Tempo</sup></div>
+                <div th:text="${filme.timeFilme}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade text-break" th:id="CardModalPreviewFilmes+${filme.idFilme}" tabindex="1"
+          aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content" id="modalDetails">
+              <div class="modal-header" id="headerDetailsFilme">
+                <h5 class="modal-title w-100" id="exampleModalLabel" th:text="${filme.nomeFilme}"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
 
 
 
+                <div class="mb-3">
+                  <label class="col-form-label">Tempo:</label>
+                  <p type="time" class="text" step="1" id="tempo" th:text="${filme.timeFilme}"></p>
+                  <hr>
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">Anotações:</label>
+                  <p class="text" id="anotacao" th:text="${filme.anotacaoFilme}"></p>
+                </div>
 
+              </div>
+              <div class="modal-footer">
+                <button id="closeFilme" type="button" class="btn" data-bs-dismiss="modal">Close</button>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-          crossorigin="anonymous"></script>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

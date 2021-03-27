@@ -78,7 +78,8 @@ public class Serie {
         this.time = time;
     }
 
-    public Serie(String nome, Time time, String anotacao, Integer temp, Integer ep) {
+    public Serie(Long id, String nome, Time time, String anotacao, Integer temp, Integer ep) {
+        this.id = id;
         this.nome = nome;
         this.time = time;
         this.anotacao = anotacao;

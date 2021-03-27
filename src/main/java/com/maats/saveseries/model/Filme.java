@@ -16,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+        private Long idFilme;
 
         @NotBlank
         private String nomeFilme;
@@ -31,13 +31,7 @@ import javax.validation.constraints.NotBlank;
 
         }
 
-        public Long getId() {
-            return id;
-        }
-
-        public void setId(Long id) {
-            this.id = id;
-        }
+        
 
         public String getNomeFilme() {
             return nomeFilme;
@@ -63,11 +57,19 @@ import javax.validation.constraints.NotBlank;
             this.anotacaoFilme = anotacaoFilme;
         }
 
-        public Filme(Long id, @NotBlank String nomeFilme, Time timeFilme, String anotacaoFilme) {
-            this.id = id;
+        public Filme(Long idFilme, @NotBlank String nomeFilme, Time timeFilme, String anotacaoFilme) {
+            this.idFilme = idFilme;
             this.nomeFilme = nomeFilme;
             this.timeFilme = timeFilme;
             this.anotacaoFilme = anotacaoFilme;
+        }
+
+        public Long getIdFilme() {
+            return idFilme;
+        }
+
+        public void setIdFilme(Long idFilme) {
+            this.idFilme = idFilme;
         }
 
     }

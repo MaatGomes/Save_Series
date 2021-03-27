@@ -12,6 +12,7 @@ body{
 @media (max-width: 575.98px) { 
 #botao{
   margin-right: 23%;
+
 }
 @media (min-width: 767.98px) { 
   #botao{
@@ -22,27 +23,30 @@ body{
     
 }
 #btn-newCard{
-    margin-left: 91%;
-   
+    color: black;
+    background-color:white;
+  margin-left: 91%;
 }
 #btn-newCard:hover{
-    color: rgb(95, 95, 95);
+    color: rgb(182, 142, 10) ;
 }
+
 .navbar-brand{ 
     font-family: Apple Chancery, cursive;
     
 }
 .navbar{
-    background-color: rgb(243, 207, 0) !important;
+   background:white !important;
     margin: 20px;
     border-radius: 3px;
+    
 }
 .navbar-nav{
-    margin-left: 74%;
+    margin-left: 85%;
 
 }
 .nav-item{
-    margin-right: 50px;
+    margin-right: 20px;
 
 }
 
@@ -54,7 +58,7 @@ body{
 }
 .nav-link.active,
  .nav-link:hover{
-  color:white !important; 
+  color:rgb(182, 142, 10) !important; 
  
  }
 .card {
@@ -65,6 +69,7 @@ body{
     box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
     font-family: roboto;
     text-align: center;
+    
   }
   .card-text {
     grid-area: text;
@@ -97,10 +102,22 @@ body{
     border-bottom-right-radius: 15px;
     background: rgb(247, 190, 4) ;
   }
+  .card-statsFilme {
+    grid-area: stats; 
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: rgb(209, 8, 8) ;
+  }
+
   .card-stats .stat {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    color: black;
+    padding:10px;
+  }
+  .card-statsFilme .stat {
     flex-direction: column;
     color: black;
     padding:10px;
@@ -113,46 +130,45 @@ body{
     transition: 0.5s ease;
     cursor: pointer;
     margin:20px;
+  
   }
- #btnCard{
-   display: inline;
- }
- #btnCardd{
-  display: inline;
- margin: 10px;;
-}
-#btnCarddd{
-  display: inline;
-}
+
+
 #anotacoes{
   overflow: hidden; width:170px; border:1px; white-space:nowrap;
 }
 
 
-  
- 
-  #btnCard{
-    display: inline;
- 
-   
-  }
-  #btnCardd{
-   display: inline;
-  margin: 10px;;
+ #opcoes{
+  border-top-left-radius:15px ;
+  border-top-right-radius:15px ;
+  background-color:rgb(247, 190, 4);
  }
- #btnCarddd{
-   display: inline;
-  
-   
+ #opcoes2{
+  border-top-left-radius:15px ;
+  border-top-right-radius:15px ;
+  background-color: rgb(209, 8, 8);
  }
 
- #headerDetails{
+
+
+#btnCardFilme{
+background-color: rgb(209, 8, 8) ;
+margin-left: 5px;
+}
+
+ #headerDetailsSerie{
   background-color:rgb(247, 190, 4);
   border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
-  
-  
+  border-top-right-radius: 18px; 
 }
+
+#headerDetailsFilme{
+  background-color: rgb(209, 8, 8);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px; 
+}
+
 #modalDetails{
  border-top-left-radius: 18px;
  border-top-right-radius: 18px;
@@ -162,18 +178,67 @@ body{
  font-family: roboto;
  font-size: 20px;
 }
-
+#CardEscolha{
+  border-top-left-radius: 18px;
+ border-top-right-radius: 18px;
+ border-bottom-left-radius: 18px;
+ border-bottom-right-radius: 18px;
+ text-align: center;
+ font-family: roboto;
+ font-size: 20px;
+}
+#tituloEscolha{
+  background-color:rgb(247, 190, 4);
+}
 #exampleModalLabel{
   font-family: roboto;
   font-size: 45px;
 }
+#exampleModalLabelSerie{
+  font-family: roboto;
+  font-size: 35px;
+}
+#exampleModalLabelFilme{
+  font-family: roboto;
+  font-size: 35px;
+}
+
 .col-form-label{
   font-style: oblique;
   font-weight: bold
 }
 #CardModalSerie { overflow-y: auto }
 #CardModalFilme { overflow-y: auto }
+#EditarSerie { overflow-y: auto }
 
-  
+#anotacoes{
+  text-align: center;
+}
 
+#closeFilme{
+  background-color: rgb(209, 8, 8);
+}
+#closeFilme:hover{
+  background-color: rgb(231, 14, 14);
+}
 
+#tituloCard{
+  display: grid;
+}
+
+#btnEscolha{
+  background-color: rgb(7, 0, 0) ;
+  color: white;
+}
+#btnEscolha:hover{
+  background-color: rgb(51, 48, 48) ;
+  color: white;
+}
+#btnNC{
+  background-color: rgb(7, 0, 0) ;
+  color: white;
+}
+#btnNC:hover{
+  background-color: rgb(51, 48, 48) ;
+  color: white;
+}

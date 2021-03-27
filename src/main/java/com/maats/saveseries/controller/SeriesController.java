@@ -17,9 +17,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class SeriesController {
@@ -56,53 +56,63 @@ public class SeriesController {
             attributes.addFlashAttribute("serie", serie);
          
             return "redirect:/cards";
-
         }
-
-    
-           
-
             serieRepository.save(serie);
             return "redirect:/cards";
         }
 
+        @PostMapping("/filmes")
+    public String saveFilmes(@Valid Filme filme, BindingResult result, RedirectAttributes attributes) {
 
+        if (result.hasErrors()) {
+         
+            attributes.addFlashAttribute("filme", filme);
+            return "redirect:/cards";
+
+        }
+       
+            filmeRepository.save(filme);
+            return "redirect:/cards";
+            
+
+    }
+
+    @GetMapping("/editSerie/{id}")
+    public String editSerie(@PathVariable("id") Long id, Model model) {
+
+        Serie serie = serieService.findById(id);
+       
+        model.addAttribute("serie", serie);
+
+       
+
+        return "editSerie";
+    }
+
+    @PostMapping("/editSerie")
+    public String saveEditSerie(@Valid Serie serie, BindingResult result, Model model,
+            RedirectAttributes attributes) {
+
+        if (result.hasErrors()) {
+
+            return "redirect:/cards";
+
+        }
+
+        serieRepository.save(serie);
+
+        return "redirect:/cards";
+    }
+
+
+    
+    @GetMapping("/ajuda")
+    public String ajuda() {
+        return "ajuda";
+    }
   
 
-    /*
-     * /* @GetMapping("/filmes") public String getFilmes(Filme f, Model model){
-     * List<Filme> filmes = filmeService.findAll(); model.addAttribute("filmes",
-     * filmes); model.addAttribute("f", f); return "filmes"; }
-     */
-    /*
-     * @PostMapping("/filmes") public String saveCardFilme(@Valid Filme filme,
-     * BindingResult result, RedirectAttributes attributes){
-     * 
-     * if (result.hasErrors()) {
-     * 
-     * attributes.addFlashAttribute("filme", filme); return "redirect:/series";
-     * 
-     * } filmeRepository.save(filme);
-     * 
-     * return "redirect:/filmes";
-     * 
-     * }
-     */
 
-    @GetMapping("/cardDetailsSeries/{id}")
-    public String getCardDetailsSerie(@PathVariable("id") Long id) {
-
-        serieService.findById(id);
-
-        return "series";
-    }
-
-    @GetMapping("/cardDetailsFilmes/{id}")
-    public String getCardDetailsFilme(@PathVariable("id") Long id) {
-
-        filmeService.findById(id);
-
-        return "series";
-    }
+    
 
 }
