@@ -103,6 +103,13 @@ public class SeriesController {
 
         return "redirect:/cards";
     }
+    @GetMapping("/serie/delete/{id}")
+    public String deleteSerie(@PathVariable("id") Long id) {
+
+        serieService.deleteById(id);
+
+        return "redirect:/cards";
+    }
 
 
     

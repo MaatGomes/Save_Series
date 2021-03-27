@@ -8,4 +8,5 @@ public interface SerieService {
     List<Serie> findAll();
     Serie findById(Long id);
     Serie save(Serie serie);
+    void deleteById(long id);
 }

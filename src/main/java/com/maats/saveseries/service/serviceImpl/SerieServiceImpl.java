@@ -32,4 +32,9 @@ public class SerieServiceImpl implements SerieService {
         return serieRepository.save(serie);
     }
 
+    @Override
+    public void deleteById(long id) {
+
+    }
+
 }
