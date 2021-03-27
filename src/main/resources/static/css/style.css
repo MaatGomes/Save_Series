@@ -153,9 +153,12 @@ body{
 
 
 #btnCardFilme{
-background-color: rgb(209, 8, 8) ;
 margin-left: 5px;
 }
+#btnCardFilme:hover{
+  transform: scale(1.15);
+}
+
 
  #headerDetailsSerie{
   background-color:rgb(247, 190, 4);
@@ -223,7 +226,14 @@ margin-left: 5px;
 }
 
 #tituloCard{
-  display: grid;
+  display: inline-block;
+}
+
+#btnCardHeader{
+  margin-left: 5px;
+}
+#btnCardHeader:hover{
+  transform: scale(1.15);
 }
 
 #btnEscolha{
@@ -242,3 +252,4 @@ margin-left: 5px;
   background-color: rgb(51, 48, 48) ;
   color: white;
 }
+

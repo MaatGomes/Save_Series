@@ -151,16 +151,20 @@
         <div class="card">
           <div>
             <div id="opcoes">
-              <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal" id="btnCard"
+              
+              <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal" id="btnCardHeader"
                 class="btn" role="button"><i class="far fa-eye"></i></a>
-              <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal" id="btnCardEditar"
+              <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal" id="btnCardHeader"
                 class="btn" role="button"><i class="far fa-edit"></i></a>
               <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal"
-                id="btnCardExcluir" class="btn" role="button"><i class="far fa-trash-alt"></i></a>
+                id="btnCardHeader" class="btn" role="button"><i class="far fa-trash-alt "></i></a>
+               
 
             </div>
             <div class="card-text">
+            
               <h2 id="tituloCard" th:text="${#strings.abbreviate(serie.nome, 10)}"></h2>
+             
               <hr>
               <div><sup>Anotações:</sup></div>
               <p id="anotacoes" th:utext="${#strings.abbreviate(serie.anotacao, 20)}"></p>
@@ -282,7 +286,7 @@
           <div>
             <div id="opcoes2">
               <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
-              id="btnCardFilme" class="btn" role="button"><i class="far fa-eye"></i></a>
+              id="btnCardFilme" class="btn" role="button" ><i class="far fa-eye"></i></a>
               <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
               id="btnCardFilme" class="btn" role="button"><i class="far fa-edit"></i></a>
               <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
@@ -291,7 +295,6 @@
 
             </div>
             <div class="card-text">
-
               <h2 id="tituloCard" th:text="${#strings.abbreviate(filme.nomeFilme, 10)}"></h2>
 
               <hr>
