@@ -287,3 +287,10 @@ body{
 #Excard{
 margin: 5%;
 }
+#contato{
+  font-size: 120%;
+  text-decoration: underline;
+}
+#lin{
+  text-decoration: none;
+}
