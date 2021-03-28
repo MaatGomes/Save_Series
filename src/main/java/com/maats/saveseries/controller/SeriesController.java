@@ -113,9 +113,9 @@ public class SeriesController {
 
 
     
-    @GetMapping("/ajuda")
-    public String ajuda() {
-        return "ajuda";
+    @GetMapping("/sobre")
+    public String sobre() {
+        return "sobre";
     }
   
 

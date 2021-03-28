@@ -24,7 +24,7 @@ body{
 }
 #btn-newCard{
     color: black;
-    background-color:white;
+    background-color:rgb(255, 253, 208);
   margin-left: 91%;
 }
 #btn-newCard:hover{
@@ -36,7 +36,7 @@ body{
     
 }
 .navbar{
-   background:white !important;
+   background:rgb(255, 253, 208) !important;
     margin: 20px;
     border-radius: 3px;
     
@@ -122,43 +122,27 @@ body{
     color: black;
     padding:10px;
   }
-  .card:hover {
+  .card:hover{
     transform: scale(1.15);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+  .card:hover  #btnCardHeader {
+    visibility: visible;
+  }
+  .card:hover  #btnCardFilme{
+    visibility: visible;
   }
   .card {
     transition: 0.5s ease;
     cursor: pointer;
     margin:20px;
-  
+   
   }
 
 
 #anotacoes{
   overflow: hidden; width:170px; border:1px; white-space:nowrap;
 }
-
-
- #opcoes{
-  border-top-left-radius:15px ;
-  border-top-right-radius:15px ;
-  background-color:rgb(247, 190, 4);
- }
- #opcoes2{
-  border-top-left-radius:15px ;
-  border-top-right-radius:15px ;
-  background-color: rgb(209, 8, 8);
- }
-
-
-
-#btnCardFilme{
-margin-left: 5px;
-}
-#btnCardFilme:hover{
-  transform: scale(1.15);
-}
-
 
  #headerDetailsSerie{
   background-color:rgb(247, 190, 4);
@@ -230,19 +214,42 @@ margin-left: 5px;
 }
 
 #btnCardHeader{
-  margin-left: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  visibility: hidden;
 }
 #btnCardHeader:hover{
-  transform: scale(1.15);
+  transform: scale(1.15); 
 }
+#btnCardFilme{
+  margin-left: 10px;
+  margin-right: 10px;
+  visibility: hidden;
+  }
+  #btnCardFilme:hover{
+    transform: scale(1.15);
+  }
+#opcoes{
+  border-top-left-radius:15px ;
+  border-top-right-radius:15px ;
+  background-color:rgb(247, 190, 4);
+ 
+ }
+
+ #opcoes2{
+  border-top-left-radius:15px ;
+  border-top-right-radius:15px ;
+  background-color: rgb(209, 8, 8);
+ }
 
 #btnEscolha{
-  background-color: rgb(7, 0, 0) ;
-  color: white;
+  background-color:rgb(241, 239, 168) ;
+  color: black;
+  
 }
 #btnEscolha:hover{
-  background-color: rgb(51, 48, 48) ;
-  color: white;
+  background-color:rgb(255, 253, 208);
+  color: black;
 }
 #btnNC{
   background-color: rgb(7, 0, 0) ;
@@ -252,4 +259,15 @@ margin-left: 5px;
   background-color: rgb(51, 48, 48) ;
   color: white;
 }
-
+#fundo{
+  background-color: aliceblue;
+  color:black ;
+  text-align: center;
+}
+#pao{
+  display: inline;
+  margin-left: 18%;
+}
+#btnDemo{
+  background-color: aqua;
+}
