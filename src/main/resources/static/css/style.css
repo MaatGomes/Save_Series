@@ -260,14 +260,29 @@ body{
   color: white;
 }
 #fundo{
-  background-color: aliceblue;
+  background:rgb(255, 253, 208) ;
   color:black ;
-  text-align: center;
+  padding: 2%;
+  border-radius: 5px;
+  font-family: Apple Chancery, cursive;
+  
 }
-#pao{
-  display: inline;
-  margin-left: 18%;
-}
+
 #btnDemo{
   background-color: aqua;
+}
+
+#CF{
+  font-size: 150%;
+  text-align: center;
+  margin-bottom: 3%;
+}
+#Center{
+  text-align: center;
+}
+#lado{
+  display: inline-block;
+}
+#Excard{
+margin: 5%;
 }
