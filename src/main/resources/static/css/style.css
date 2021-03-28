@@ -243,16 +243,16 @@ body{
  }
 
 #btnEscolha{
-  background-color:rgb(241, 239, 168) ;
-  color: black;
+  background-color:black ;
+  color: white;
   
 }
 #btnEscolha:hover{
-  background-color:rgb(255, 253, 208);
-  color: black;
+  background-color:rgb(51, 48, 48);
+  color: white;
 }
 #btnNC{
-  background-color: rgb(7, 0, 0) ;
+  background-color: black;
   color: white;
 }
 #btnNC:hover{
