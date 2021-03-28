@@ -153,13 +153,13 @@
             <div id="opcoes">
               
               <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal"
-               data-toggle="tooltip" data-placement="top" title="Visualizar" id="btnCardHeader"
+               data-toggle="tooltip" title="Visualizar" id="btnCardHeader"
                 class="btn" role="button"><i class="far fa-eye"></i></a>
               <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal"
-               data-toggle="tooltip" data-placement="top" title="Editar" id="btnCardHeader"
+               data-toggle="tooltip" title="Editar" id="btnCardHeader"
                 class="btn" role="button"><i class="far fa-edit"></i></a>
               <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal"
-               data-toggle="tooltip" data-placement="top" title="Excluir"
+               data-toggle="tooltip" title="Excluir"
                 id="btnCardHeader" class="btn" role="button"><i class="far fa-trash-alt "></i></a>
                
 
@@ -289,10 +289,13 @@
           <div>
             <div id="opcoes2">
               <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
+                data-toggle="tooltip"  title="Visualizar"
               id="btnCardFilme" class="btn" role="button" ><i class="far fa-eye"></i></a>
               <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
+                data-toggle="tooltip" title="Editar"
               id="btnCardFilme" class="btn" role="button"><i class="far fa-edit"></i></a>
               <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
+                data-toggle="tooltip" title="Excluir"
               id="btnCardFilme" class="btn" role="button"><i class="far fa-trash-alt"></i></a>
 
 
