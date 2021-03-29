@@ -24,11 +24,11 @@ body{
 }
 #btn-newCard{
     color: black;
-    background-color:rgb(255, 253, 208);
+    background-color:  #8e7758    ;
   margin-left: 91%;
 }
 #btn-newCard:hover{
-    color: rgb(182, 142, 10) ;
+    color: #deb887 ;
 }
 
 .navbar-brand{ 
@@ -36,11 +36,21 @@ body{
     
 }
 .navbar{
-   background:rgb(255, 253, 208) !important;
+   background:#8e7758    !important;
     margin: 20px;
     border-radius: 3px;
     
 }
+
+#fundo{
+  background:#deb887 ;
+  color:rgb(0, 0, 0) ;
+  padding: 2%;
+  border-radius: 5px;
+  font-family: Apple Chancery, cursive;
+  
+}
+
 .navbar-nav{
     margin-left: 72%;
 
@@ -53,12 +63,12 @@ body{
 
 .nav-link{
     font-size: 17px;
-    color: black !important;
+    color: #000000 !important;
    
 }
 .nav-link.active,
  .nav-link:hover{
-  color:rgb(182, 142, 10) !important; 
+  color:#deb887 !important; 
  
  }
 .card {
@@ -246,13 +256,13 @@ body{
  }
 
 #btnEscolha{
-  background-color:black ;
-  color: white;
+  background-color:#8e7758 ;
+  color: rgb(0, 0, 0);
   
 }
 #btnEscolha:hover{
-  background-color:rgb(51, 48, 48);
-  color: white;
+  background-color:#8e7758;
+  color: #deb887;
 }
 #btnNC{
   background-color: black;
@@ -262,14 +272,7 @@ body{
   background-color: rgb(51, 48, 48) ;
   color: white;
 }
-#fundo{
-  background:rgb(255, 253, 208) ;
-  color:black ;
-  padding: 2%;
-  border-radius: 5px;
-  font-family: Apple Chancery, cursive;
-  
-}
+
 
 #btnDemo{
   background-color: aqua;
