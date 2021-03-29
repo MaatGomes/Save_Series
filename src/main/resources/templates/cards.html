@@ -80,11 +80,11 @@
               <input type="text" class="form-control" id="nome" th:field="*{nome}">
             </div>
             <div class="mb-3">
-              <label class="col-form-label">Temporada</label>
+              <label class="col-form-label">Temporada:</label>
               <input type="number" class="form-control" id="temp" th:field="*{temp}">
             </div>
             <div class="mb-3">
-              <label class="col-form-label">Epsódio</label>
+              <label class="col-form-label">Epsódio:</label>
               <input type="number" class="form-control" id="ep" th:field="*{ep}">
             </div>
             <div class="mb-3">
@@ -173,14 +173,11 @@
               <hr>
               <div><sup>Anotações:</sup></div>
               <p id="anotacoes" th:utext="${#strings.abbreviate(serie.anotacao, 20)}"></p>
-
-
-
             </div>
             <div class="card-stats">
               <div class="stat">
                 <div><sup>Temporada</sup></div>
-                <div th:text="${serie.temp}"></div>
+                <div th:text="${serie.temp}+'°'"></div>
               </div>
               <div class="stat border">
                 <div><sup>Episódio</sup></div>
@@ -269,34 +266,34 @@
               </div>
               <div class="modal-body">
                 <form method="POST" th:action="@{/editSerie}" th:object="${serie}">
+                  <input type="hidden" id="id" th:field="*{id}" th:value="${serie.id}">
                   <div class="mb-3">
                     <label class="col-form-label">Nome da série:</label>
-                    <input type="text" class="form-control" id="nome" th:value="*{nome}" >
+                    <input   th:value="${serie.nome}" type="text" class="form-control" id="nome">
                   </div>
                   <div class="mb-3">
                     <label class="col-form-label">Temporada</label>
-                    <input type="number" class="form-control" id="temp"  th:value="*{temp}">
+                    <input  th:value="${serie.temp}" type="number" class="form-control" id="temp" >
                   </div>
                   <div class="mb-3">
                     <label class="col-form-label">Episódio</label>
-                    <input type="number" class="form-control" id="ep" th:value="*{ep}">
+                    <input  th:value="${serie.ep}" type="number" class="form-control" id="ep" >
                   </div>
                   <div class="mb-3">
                     <label class="col-form-label">Tempo:</label>
-                    <input type="time" class="form-control" step="1" id="tempo" th:value="*{time}">
+                    <input  th:value="${serie.time}" type="time" class="form-control" step="1" id="tempo" >
                   </div>
                   <div class="mb-3">
                     <label class="col-form-label">Anotações:</label>
-                    <textarea class="form-control" id="message-text"
-                      th:value="*{anotacao}"></textarea>
+                    <textarea th:value="${serie.anotacao}" class="form-control" id="message-text" ></textarea>
                   </div>
-                  <input type="hidden" id="id" th:field="*{id}">
+                  
   
               </div>
   
               <div class="modal-footer">
                 <button id="btnNC" type="button" class="btn" data-bs-dismiss="modal">Close</button>
-                <a id="btnNC" th:href="@{'/editSerie/' + ${serie.id}}" type="submit" class="btn">salvar alterações</a>
+                <button id="btnNC" type="submit" class="btn">salvar alterações</button>
   
               </div>
   

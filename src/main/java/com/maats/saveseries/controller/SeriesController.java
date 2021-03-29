@@ -82,7 +82,7 @@ public class SeriesController {
         Serie serie = serieService.findById(id); 
         model.addAttribute("serie", serie);
         
-        return "editSerie";
+        return "cards";
     }
 
     @PostMapping("/editSerie")
@@ -99,6 +99,9 @@ public class SeriesController {
 
         return "redirect:/cards";
     }
+
+
+
     @GetMapping("/deleteSerie/{id}")
     public String deleteSerie(@PathVariable("id") Long id) {
 
