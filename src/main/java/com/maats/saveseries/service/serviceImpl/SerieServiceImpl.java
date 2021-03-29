@@ -34,7 +34,7 @@ public class SerieServiceImpl implements SerieService {
 
     @Override
     public void deleteById(long id) {
-
+        serieRepository.deleteById(id);
     }
 
 }

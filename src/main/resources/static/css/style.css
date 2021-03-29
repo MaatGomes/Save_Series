@@ -197,6 +197,9 @@ body{
 #CardModalSerie { overflow-y: auto }
 #CardModalFilme { overflow-y: auto }
 #EditarSerie { overflow-y: auto }
+.modal{
+  overflow-y: auto;
+}
 
 #anotacoes{
   text-align: center;
@@ -293,4 +296,7 @@ margin: 5%;
 }
 #lin{
   text-decoration: none;
+}
+#excluir{
+  text-align: center;
 }

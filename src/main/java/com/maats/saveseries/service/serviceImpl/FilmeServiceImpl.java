@@ -32,6 +32,12 @@ public class FilmeServiceImpl implements FilmeService {
         return filmeRepository.save(filme);
     }
 
+    @Override
+    public void deleteById(long id) {
+        filmeRepository.deleteById(id);
+
+    }
+
    
 
    

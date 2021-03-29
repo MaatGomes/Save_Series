@@ -79,13 +79,9 @@ public class SeriesController {
 
     @GetMapping("/editSerie/{id}")
     public String editSerie(@PathVariable("id") Long id, Model model) {
-
-        Serie serie = serieService.findById(id);
-       
+        Serie serie = serieService.findById(id); 
         model.addAttribute("serie", serie);
-
-       
-
+        
         return "editSerie";
     }
 
@@ -103,10 +99,18 @@ public class SeriesController {
 
         return "redirect:/cards";
     }
-    @GetMapping("/serie/delete/{id}")
+    @GetMapping("/deleteSerie/{id}")
     public String deleteSerie(@PathVariable("id") Long id) {
 
         serieService.deleteById(id);
+
+        return "redirect:/cards";
+    }
+
+    @GetMapping("/deleteFilme/{id}")
+    public String deleteFilme(@PathVariable("id") Long id) {
+
+        filmeService.deleteById(id);
 
         return "redirect:/cards";
     }

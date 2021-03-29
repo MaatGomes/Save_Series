@@ -10,4 +10,5 @@ public interface FilmeService {
         List<Filme> findAll();
         Filme findById(Long id);
         Filme save(Filme filme);
+        void deleteById(long id);
     }
