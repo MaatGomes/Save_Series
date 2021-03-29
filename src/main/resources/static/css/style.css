@@ -265,12 +265,12 @@ body{
   color: #deb887;
 }
 #btnNC{
-  background-color: black;
-  color: white;
+  background-color: #8e7758;
+  color:#000000;
 }
 #btnNC:hover{
-  background-color: rgb(51, 48, 48) ;
-  color: white;
+  background-color: #8e7758 ;
+  color: #deb887;
 }
 
 
