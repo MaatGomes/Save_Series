@@ -1,4 +1,4 @@
-package com.maats.saveseries.model;
+package com.maats.savetime.model;
 
 import java.sql.Time;
 

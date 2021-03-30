@@ -1,13 +1,13 @@
-package com.maats.saveseries;
+package com.maats.savetime;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SaveseriesApplication {
+public class SavetimeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SaveseriesApplication.class, args);
+		SpringApplication.run(SavetimeApplication.class, args);
 	}
 
 }

@@ -1,10 +1,10 @@
-package com.maats.saveseries;
+package com.maats.savetime;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SaveseriesApplicationTests {
+class SavetimeApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -9,19 +9,83 @@ body{
     background-repeat: no-repeat;
    
 }
-@media (max-width: 575.98px) { 
-#botao{
-  margin-right: 23%;
 
-}
-@media (min-width: 767.98px) { 
+@media (max-width: 360.98px) { 
   #botao{
-    margin-right: 16%;
+   margin-left: -110%;
   }
 }
 
-    
+@media (max-width: 575.98px) { 
+  #botao{
+    margin-right: 28%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #btn-newCard{
+    height: 40px;
+    width: 150px;
+ 
+  }
+
 }
+
+@media (min-width: 1024px) { 
+  .nav-item{
+    margin-left: 3px;
+  }
+ 
+}
+
+@media (min-width: 1600px) { 
+  #botao{
+    margin-right: 0%;
+  }
+  #btn-newCard{
+    height: 40px;
+    width: 150px;
+ 
+  } 
+  
+}
+@media (min-width: 1920px) { 
+  #botao{
+    margin-left: 15%;
+  }
+  #btn-newCard{
+    height: 40px;
+    width: 150px;
+ 
+  } 
+  .nav-item{
+    margin-left: 20px;
+  }
+  .navbar-nav{
+    padding-left: 7%;
+}
+  
+}
+
+@media (min-width: 3840px) { 
+  #botao{
+    margin-left: 58%;
+  }
+  #btn-newCard{
+    height: 40px;
+    width: 150px;
+ 
+  } 
+  .nav-item{
+    margin-left: 20px;
+  }
+  .navbar-nav{
+    padding-left: 19%;
+}
+
+  
+}
+
+
 #btn-newCard{
     color: black;
     background-color:  #8e7758    ;

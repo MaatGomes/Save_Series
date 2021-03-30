@@ -1,12 +1,12 @@
-package com.maats.saveseries.service.serviceImpl;
+package com.maats.savetime.service.serviceImpl;
 
 import java.util.List;
 
-import com.maats.saveseries.model.Serie;
+import com.maats.savetime.model.Serie;
 
-import com.maats.saveseries.repository.SerieRepository;
+import com.maats.savetime.repository.SerieRepository;
 
-import com.maats.saveseries.service.SerieService;
+import com.maats.savetime.service.SerieService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

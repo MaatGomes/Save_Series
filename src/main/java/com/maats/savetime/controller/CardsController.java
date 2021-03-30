@@ -1,15 +1,15 @@
-package com.maats.saveseries.controller;
+package com.maats.savetime.controller;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
-import com.maats.saveseries.model.Filme;
-import com.maats.saveseries.model.Serie;
-import com.maats.saveseries.repository.FilmeRepository;
-import com.maats.saveseries.repository.SerieRepository;
-import com.maats.saveseries.service.FilmeService;
-import com.maats.saveseries.service.SerieService;
+import com.maats.savetime.model.Filme;
+import com.maats.savetime.model.Serie;
+import com.maats.savetime.repository.FilmeRepository;
+import com.maats.savetime.repository.SerieRepository;
+import com.maats.savetime.service.FilmeService;
+import com.maats.savetime.service.SerieService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,7 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class SeriesController {
+public class CardsController {
 
     @Autowired
     SerieService serieService;

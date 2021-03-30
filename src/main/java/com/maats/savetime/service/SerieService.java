@@ -1,8 +1,8 @@
-package com.maats.saveseries.service;
+package com.maats.savetime.service;
 
 import java.util.List;
 
-import com.maats.saveseries.model.Serie;
+import com.maats.savetime.model.Serie;
 
 public interface SerieService {
     List<Serie> findAll();

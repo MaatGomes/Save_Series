@@ -1,7 +1,7 @@
-package com.maats.saveseries.repository;
+package com.maats.savetime.repository;
 
 
-import com.maats.saveseries.model.Serie;
+import com.maats.savetime.model.Serie;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
