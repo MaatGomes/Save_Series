@@ -39,14 +39,14 @@
   </header>
 
 
-
+  <!--Botão para criar um novo card-->
   <div id="botao">
     <a id="btn-newCard" data-bs-target="#CardEscolha" data-bs-toggle="modal" class="btn" role="button">Novo
       Card</a>
   </div>
 
 
-
+  <!--Botões para escolher que tipo de card criar-->
   <div class="modal fade" id="CardEscolha">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -65,7 +65,7 @@
     </div>
   </div>
 
-
+  <!--Modal para criar um card de série-->
   <div class="modal fade" id="CardModalSerie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -107,7 +107,7 @@
   </div>
 
 
-
+  <!--Modal para criar um card de filme-->
   <div class="modal fade" id="CardModalFilme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -141,13 +141,7 @@
   </div>
 
 
-
-
-
-
-
-
-
+  <!--Card de série-->
   <div class="container">
     <div class="row">
       <div class="col-sm-3" th:each="serie : ${serieLista}">
@@ -190,6 +184,7 @@
           </div>
         </div>
 
+        <!--Modal para exibir detalhes do card de series-->
         <div class="modal fade text-break" th:id="CardModalPreviewSerie+${serie.id}" tabindex="1"
           aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -236,6 +231,7 @@
           </div>
         </div>
 
+        <!--Modal para confirmar a exclusão de um card de série-->
         <div class="modal fade" th:id="myModald+${serie.id}">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -251,15 +247,9 @@
           </div>
         </div>
 
-
-
-
       </div>
 
-
-
-   
-
+      <!--Card de filme-->
       <div class="col-sm-3" th:each="filme : ${filmeLista}">
         <div class="card">
           <div>
@@ -267,10 +257,8 @@
               <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
                 data-toggle="tooltip" title="Visualizar" id="btnCardFilme" class="btn" role="button"><i
                   class="far fa-eye"></i></a>
-              <a th:attr="data-bs-target='#myModalf'+${filme.idFilme}" data-bs-toggle="modal"
-                data-toggle="tooltip" title="Excluir" id="btnCardFilme" class="btn" role="button"><i
-                  class="far fa-trash-alt"></i></a>
-
+              <a th:attr="data-bs-target='#myModalf'+${filme.idFilme}" data-bs-toggle="modal" data-toggle="tooltip"
+                title="Excluir" id="btnCardFilme" class="btn" role="button"><i class="far fa-trash-alt"></i></a>
 
             </div>
             <div class="card-text">
@@ -280,9 +268,6 @@
 
               <div><sup>Anotações:</sup></div>
               <p id="anotacoes" th:utext="${#strings.abbreviate(filme.anotacaoFilme, 20)}"></p>
-
-
-
 
             </div>
             <div class="card-statsFilme">
@@ -294,6 +279,7 @@
           </div>
         </div>
 
+        <!--Modal para exbir detalhes do card de filmes-->
         <div class="modal fade text-break" th:id="CardModalPreviewFilmes+${filme.idFilme}" tabindex="1"
           aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -303,9 +289,6 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-
-
-
                 <div class="mb-3">
                   <label class="col-form-label">Tempo:</label>
                   <p type="time" class="text" step="1" id="tempo" th:text="${filme.timeFilme}"></p>
@@ -327,7 +310,8 @@
             </div>
           </div>
         </div>
-        
+
+        <!--Modal para confirmar exclusão de um card de filme-->
         <div class="modal fade" th:id="myModalf+${filme.idFilme}">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -342,8 +326,6 @@
             </div>
           </div>
         </div>
-
-
 
 
       </div>
