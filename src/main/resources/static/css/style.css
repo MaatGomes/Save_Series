@@ -25,20 +25,23 @@ body{
 #btn-newCard{
     color: black;
     background-color:  #8e7758    ;
-  margin-left: 91%;
+  margin-left: 89.5%;
 }
 #btn-newCard:hover{
     color: #deb887 ;
 }
 
 .navbar-brand{ 
-    font-family: Apple Chancery, cursive;
-    
+    font-family:  Luminari, fantasy ;
+    font-size: 25px;
+     
 }
+
 .navbar{
    background:#8e7758    !important;
     margin: 20px;
     border-radius: 3px;
+   
     
 }
 
@@ -52,7 +55,7 @@ body{
 }
 
 .navbar-nav{
-    margin-left: 72%;
+    margin-left: 70%;
 
 }
 .nav-item{
