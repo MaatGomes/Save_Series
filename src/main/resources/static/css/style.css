@@ -230,7 +230,7 @@ body{
   margin-left: 32px;
   margin-right: 32px;
   visibility: hidden;
-  padding: 5%;
+  padding: 3%;
 }
 #btnCardHeader:hover{
   transform: scale(1.15); 
@@ -239,7 +239,7 @@ body{
   margin-left: 32px;
   margin-right: 32px;
   visibility: hidden;
-  padding: 5%;
+  padding: 3%;
   }
   #btnCardFilme:hover{
     transform: scale(1.15);
