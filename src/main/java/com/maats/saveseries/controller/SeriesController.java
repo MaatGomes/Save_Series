@@ -77,30 +77,6 @@ public class SeriesController {
 
     }
 
-    @GetMapping("/editSerie/{id}")
-    public String editSerie(@PathVariable("id") Long id, Model model) {
-        Serie serie = serieService.findById(id); 
-        model.addAttribute("serie", serie);
-        
-        return "cards";
-    }
-
-    @PostMapping("/editSerie")
-    public String saveEditSerie(@Valid Serie serie, BindingResult result, Model model,
-            RedirectAttributes attributes) {
-
-        if (result.hasErrors()) {
-
-            return "redirect:/cards";
-
-        }
-
-        serieRepository.save(serie);
-
-        return "redirect:/cards";
-    }
-
-
 
     @GetMapping("/deleteSerie/{id}")
     public String deleteSerie(@PathVariable("id") Long id) {

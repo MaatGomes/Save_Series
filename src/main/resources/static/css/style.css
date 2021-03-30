@@ -227,17 +227,19 @@ body{
 }
 
 #btnCardHeader{
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 32px;
+  margin-right: 32px;
   visibility: hidden;
+  padding: 5%;
 }
 #btnCardHeader:hover{
   transform: scale(1.15); 
 }
 #btnCardFilme{
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 32px;
+  margin-right: 32px;
   visibility: hidden;
+  padding: 5%;
   }
   #btnCardFilme:hover{
     transform: scale(1.15);

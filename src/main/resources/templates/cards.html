@@ -158,9 +158,6 @@
               <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal"
                 data-toggle="tooltip" title="Visualizar" id="btnCardHeader" class="btn" role="button"><i
                   class="far fa-eye"></i></a>
-              <a th:attr="data-bs-target='#CardModalPreviewSerie'+${serie.id}" data-bs-toggle="modal"
-                data-toggle="tooltip" title="Editar" id="btnCardHeader" class="btn" role="button"><i
-                  class="far fa-edit"></i></a>
               <a th:attr="data-bs-target='#myModald'+${serie.id}" data-bs-toggle="modal" data-toggle="tooltip"
                 title="Excluir" id="btnCardHeader" class="btn" role="button"><i class="far fa-trash-alt "></i></a>
 
@@ -231,8 +228,6 @@
                 <a th:attr="data-bs-target='#myModald'+${serie.id}" data-bs-toggle="modal" data-bs-dismiss="modal"
                   role="button" class="btn btn-warning" title="Popover title"
                   data-bs-content="Popover body content is set in this attribute.">Excluir</a>
-                <a th:attr="data-bs-target='#myModalEditSerie'+${serie.id}" type="button" class="btn btn-warning" data-bs-toggle="modal"
-                  data-bs-dismiss="modal">Editar</a>
                 <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
 
               </div>
@@ -257,51 +252,6 @@
         </div>
 
 
-        <div class="modal fade" th:id="myModalEditSerie+${serie.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content" >
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabelSerie">Editando card</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form method="POST" th:action="@{/editSerie}" th:object="${serie}">
-                  <input type="hidden" id="id" th:field="*{id}" th:value="${serie.id}">
-                  <div class="mb-3">
-                    <label class="col-form-label">Nome da série:</label>
-                    <input   th:value="${serie.nome}" type="text" class="form-control" id="nome">
-                  </div>
-                  <div class="mb-3">
-                    <label class="col-form-label">Temporada</label>
-                    <input  th:value="${serie.temp}" type="number" class="form-control" id="temp" >
-                  </div>
-                  <div class="mb-3">
-                    <label class="col-form-label">Episódio</label>
-                    <input  th:value="${serie.ep}" type="number" class="form-control" id="ep" >
-                  </div>
-                  <div class="mb-3">
-                    <label class="col-form-label">Tempo:</label>
-                    <input  th:value="${serie.time}" type="time" class="form-control" step="1" id="tempo" >
-                  </div>
-                  <div class="mb-3">
-                    <label class="col-form-label">Anotações:</label>
-                    <textarea th:value="${serie.anotacao}" class="form-control" id="message-text" ></textarea>
-                  </div>
-                  
-  
-              </div>
-  
-              <div class="modal-footer">
-                <button id="btnNC" type="button" class="btn" data-bs-dismiss="modal">Close</button>
-                <button id="btnNC" type="submit" class="btn">salvar alterações</button>
-  
-              </div>
-  
-              </form>
-            </div>
-          </div>
-        </div>
-  
 
 
       </div>
@@ -317,9 +267,6 @@
               <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
                 data-toggle="tooltip" title="Visualizar" id="btnCardFilme" class="btn" role="button"><i
                   class="far fa-eye"></i></a>
-              <a th:attr="data-bs-target='#CardModalPreviewFilmes'+${filme.idFilme}" data-bs-toggle="modal"
-                data-toggle="tooltip" title="Editar" id="btnCardFilme" class="btn" role="button"><i
-                  class="far fa-edit"></i></a>
               <a th:attr="data-bs-target='#myModalf'+${filme.idFilme}" data-bs-toggle="modal"
                 data-toggle="tooltip" title="Excluir" id="btnCardFilme" class="btn" role="button"><i
                   class="far fa-trash-alt"></i></a>
