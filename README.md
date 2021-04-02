@@ -9,7 +9,7 @@ Foi desenvolvido utilizando <b>Java</b>, <b>Spring Boot</b>, <b>HTML</b>, <b>CSS
 <em>Ao passar o cursor do mouse sobre o card, aparecem dois ícones, um olho e uma lixeira, o olho é para "expadir" o card e a lixeira para excluir:</em>
 ![VizualizarDeletar](https://user-images.githubusercontent.com/79797709/113372903-08d07000-9340-11eb-90db-aab28431cced.png)
 
-<em>Ao clicar no olho, o card "se expande"... na verdade o que acontece é que as informações são exibidas em uma janela modal personazada</em>
+<em>Ao clicar no olho, o card "se expande"... na verdade o que acontece é que as informações são exibidas em uma janela modal personazada:</em>
 ![Vizualizar](https://user-images.githubusercontent.com/79797709/113372911-0b32ca00-9340-11eb-9cb6-59ae447cebab.png)
 
 
