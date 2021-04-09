@@ -1,6 +1,6 @@
 # Save Time
 
-<b>Save</b> Time é um site para salvar o tempo em que você parou no meio de uma série ou filme utilizando um sistema de cards simples e intuitivo.
+<b>Save Time</b> é um site para salvar o tempo em que você parou no meio de uma série ou filme utilizando um sistema de cards simples e intuitivo.
 Foi desenvolvido utilizando <b>Java</b>, <b>Spring Boot</b>, <b>HTML</b>, <b>CSS</b>, <b>Boststrap</b>, <b>Thymeleaf</b> e o banco de dados utilizado para fazer os testes durante o desenvolvimento foi o <b>MySQL</b>.
 
 <em>Essa é a página em que os cards ficarão salvos:</em>
