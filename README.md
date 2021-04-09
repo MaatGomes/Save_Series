@@ -12,7 +12,7 @@ Foi desenvolvido utilizando <b>Java</b>, <b>Spring Boot</b>, <b>HTML</b>, <b>CSS
 <em>Ao clicar no olho, o card "se expande"... na verdade o que acontece é que as informações são exibidas em uma janela modal personazada:</em>
 ![Vizualizar](https://user-images.githubusercontent.com/79797709/113372911-0b32ca00-9340-11eb-9cb6-59ae447cebab.png)
 
-<em>A página "Como funciona" é para ensinar o usuário a salvar novos cards e o que significa suas respectivas cores:</em>
+<em>A página "Como funciona ?" é para ensinar o usuário a salvar novos cards e o que significa suas respectivas cores:</em>
 ![comoFunciona](https://user-images.githubusercontent.com/79797709/114233375-94a35700-9953-11eb-8cac-000e34737c86.png)
 
 
